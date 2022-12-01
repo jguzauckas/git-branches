@@ -10,7 +10,7 @@ This happens more often than you'd think, especially in projects developed by mu
 
 Let's look at an example to see what happens when we have divergent history. Let's say two programmers are working on the same repository from GitHub. The repository has had commits before but only has a `main` branch that is on Commit 3, so we won't worry for now about previous commits. Both programmers - User 1 and User 2 - clone the repository to begin working on their assignments. The following diagram shows a snapshot of the current situation:
 
-![Diagram 1 - Starting Position in Sample Repository](pictures/14.PNG)
+![Diagram 1 - Starting Position in Sample Repository](pictures/14.png)
 
 ### Users Create New Branch
 
@@ -20,7 +20,7 @@ User 2 is going to be working on a new feature for the repository, and to keep t
 
 The following diagram shows a snapshot of the updated situation. Note that GitHub does not have the updated branches as neither user has pushed them.
 
-![Diagram 2 - Moving to New Branches](pictures/15.PNG)
+![Diagram 2 - Moving to New Branches](pictures/15.png)
 
 ### Making Commits on New Branches
 
@@ -28,7 +28,7 @@ At this point, both users begin working on each of their tasks. To start out, Us
 
 At this point, neither user has pushed their work to GitHub, but the following diagram shows a snapshot of their work:
 
-![Diagram 3 - Working on New Branches](pictures/16.PNG)
+![Diagram 3 - Working on New Branches](pictures/16.png)
 
 ### Pushing New Branches and Commits to GitHub
 
@@ -36,7 +36,7 @@ At the end of the day, both users push their work to GitHub. User 1 pushes their
 
 This is our first encounter with a divergent history, as we can see via GitHub in the following diagram. We have two branches, `bugfix` and `feature` that both came from Commit 3, but have taken different paths with their own commits. We can see both Commit 4 from the `bugfix` branch and Commit 5 from the `feature` branch point back to Commit 3 as the previous commit.
 
-![Diagram 4 - Pushing Both Branches to GitHub](pictures/17.PNG)
+![Diagram 4 - Pushing Both Branches to GitHub](pictures/17.png)
 
 ### Preparing to Merge by Pulling
 
@@ -44,7 +44,7 @@ The next day both users are prepared to implement their solutions. Before they d
 
 The following diagram shows that everyone sees the same information now, despite actively working on different branches:
 
-![Diagram 5 - git pull and Preparing to Merge](pictures/18.PNG)
+![Diagram 5 - git pull and Preparing to Merge](pictures/18.png)
 
 ### User 1 Merge
 
@@ -54,7 +54,7 @@ To merge, User 1 moves the `HEAD` pointer to the `main` branch using the command
 
 The following diagram shows the updated repository. Notice that the `bugfix` branch still exists, as merging a branch does not get rid of it.
 
-![Diagram 6 - User 1 Merge](pictures/19.PNG)
+![Diagram 6 - User 1 Merge](pictures/19.png)
 
 ### User 1 Updates GitHub
 
@@ -64,7 +64,7 @@ Just after this, User 2 is preparing to merge their own changes and uses `git pu
 
 The following diagram shows the updated repository. Notice that the `bugfix` branch is gone, and everyone has the most up-to-date information.
 
-![Diagram 7 - Cleaning Repository and Updating GitHub](pictures/20.PNG)
+![Diagram 7 - Cleaning Repository and Updating GitHub](pictures/20.png)
 
 ### User 2 Merge Preparation
 
@@ -74,7 +74,7 @@ In order to merge their work into the `main` branch, they need to move the `HEAD
 
 The diagram below shows that User 2 successfully moved the `HEAD` pointer so they can now work from the perspective of the `main` branch.
 
-![Diagram 8 - git pull and Preparing to Merge](pictures/21.PNG)
+![Diagram 8 - git pull and Preparing to Merge](pictures/21.png)
 
 ### User 2 Complex Merge
 
@@ -94,7 +94,7 @@ Since there is more comparison going on, git automatically creates a new commit 
 
 In this final diagram, you can see the results of User 2 running the command `git merge feature`. Fortunately, there were no merge conflicts to resolve as User 1 and User 2 were working on separate files. We can see our merge commit is Commit 8, and it points back to both Commit 6 from the `main` branch (which is from the `bugfix` branch from User 1) and to Commit 7 from the `feature` branch. In this diagram, it makes a little more sense that we use the term **merge**, as our two sets of commits running alongside together get merged back into one.
 
-![Diagram 9 - User 2 Merge](pictures/22.PNG)
+![Diagram 9 - User 2 Merge](pictures/22.png)
 
 ### User 2 Updates GitHub
 
@@ -102,4 +102,4 @@ Now that the merge has been completed, User 2 cleans up their repository by gett
 
 The following diagram shows the final state of the repository:
 
-![Diagram 10 - Cleaning Repository and Updating GitHub](pictures/23.PNG)
+![Diagram 10 - Cleaning Repository and Updating GitHub](pictures/23.png)

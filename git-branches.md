@@ -10,7 +10,7 @@ Let's add some complexity to this so that we have more opportunities open to us 
 
 In the following diagram, each gray box represents a commit in a repository, where 1 is the initial commit (the creation of the repository), and 2 and 3 are subsequent commits in that repository. If needed, we could revert the repository to a previous commit, say if you need to remove sets of changes to start fresh on an issue. Note that the arrows between commits move backwards, as a commit contains a reference to the commit it came after so it knows the order of things.
 
-![Diagram 1 - Basic Commits](pictures/1.PNG)
+![Diagram 1 - Basic Commits](pictures/1.png)
 
 Sometimes though, we want to branch out and try to make a change to one section while ignoring the rest and be able to go back to the older state to work on other things, without losing that special progress.
 
@@ -22,7 +22,7 @@ Branches are stored as a pointer to a commit. By default, your `main` branch poi
 
 In the following diagram, the yellow box represents a branch pointer within our sample repository, with its name labeled. We can see it points to commit 3, as the most recent commit.
 
-![Diagram 2 - main Branch](pictures/2.PNG)
+![Diagram 2 - main Branch](pictures/2.png)
 
 ### The `HEAD` Pointer
 
@@ -32,7 +32,7 @@ If and when you move your `main` branch back in time to a different version of t
 
 In the following diagram, the pink box now represents the `HEAD`, which we can see pointing to the `main` branch, which still points to commit 3. So git uses this `HEAD` pointer to determine what version of everything we are looking at.
 
-![Diagram 3 - HEAD Branch](pictures/3.PNG)
+![Diagram 3 - HEAD Branch](pictures/3.png)
 
 ### `git branch`
 
@@ -40,7 +40,7 @@ We can add new branches whenever we'd like using the `git branch` command and fo
 
 In the following diagram, we see the results of our branch creation. The new branch `testing` is pointing to the same commit as our branch `main`, and the `HEAD` has not changed, as just creating a branch does not change your perspective to that branch.
 
-![Diagram 4 - Adding New Branch](pictures/4.PNG)
+![Diagram 4 - Adding New Branch](pictures/4.png)
 
 ### Moving the `HEAD` Pointer
 
@@ -48,7 +48,7 @@ Any changes we make and commit right now will still affect the `main` branch, as
 
 In the following diagram, we see the results of moving `HEAD`. Nothing changed from our perspective because even though `HEAD` is pointing at `testing` instead of `main`, `testing` and `main` were pointing at the same commit: commit 3.
 
-![Diagram 5 - Moving HEAD](pictures/5.PNG)
+![Diagram 5 - Moving HEAD](pictures/5.png)
 
 ### Making a Commit on a Branch
 
@@ -56,7 +56,7 @@ At this point any changes and commits we make will be under the `testing` branch
 
 The following diagram shows how git sees the repository. The new commit 4 points back to commit 3 as the commit that came before it, but `main` did not follow along, and is staying at commit 3. Anyone looking at main in the future (including yourself) will not see the changes made within the `testing` branch.
 
-![Diagram 6 - Making New Commit on Branch](pictures/6.PNG)
+![Diagram 6 - Making New Commit on Branch](pictures/6.png)
 
 ### Moving the `HEAD` Pointer
 
@@ -64,7 +64,7 @@ The power of branches is that if we put our work in the `testing` branch on hold
 
 The following diagram shows how git perceives the repository now, with the only difference being that `HEAD` is now looking at `main` instead of `testing`, and therefore sees the information from commit 3 rather than 4.
 
-![Diagram 7 - Moving HEAD](pictures/7.PNG)
+![Diagram 7 - Moving HEAD](pictures/7.png)
 
 ### `git merge`
 
@@ -75,7 +75,7 @@ To make a merge, you first want to make sure that `HEAD` is pointing to the bran
 
 The following diagram shows how git perceives the repository now, and since our merge was simple, it just pulled `main` (and therefore `HEAD`) over to commit 4 so now they are looking at the same information, and we successfully merged the changes from the `testing` branch into our `main` branch.
 
-![Diagram 8 - Merging Branch into main](pictures/8.PNG)
+![Diagram 8 - Merging Branch into main](pictures/8.png)
 
 ### Deleting Branches
 
@@ -85,7 +85,7 @@ To delete branches, we use the same `git branch` command, with an option using a
 
 The following diagram shows how git perceives the repository now, which has the only change of our `testing` branch being no longer present.
 
-![Diagram 9 - Deleting Branches](pictures/9.PNG)
+![Diagram 9 - Deleting Branches](pictures/9.png)
 
 It is important to note that our system of branching, making changes, and then merging back in could happen with
 more than one commit. Often, branches will involve multiple commits making a variety of changes, and you can merge
