@@ -51,3 +51,9 @@ To delete a branch:
 ```bash
 git branch -d _______
 ```
+
+To push a branch to GitHub:
+
+```bash
+git push origin _______
+```
