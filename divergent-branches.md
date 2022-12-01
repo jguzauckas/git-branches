@@ -10,7 +10,7 @@ This happens more often than you'd think, especially in projects developed by mu
 
 Let's look at an example to see what happens when we have divergent history. Let's say two programmers are working on the same repository from GitHub. The repository has had commits before but only has a `main` branch that is on Commit 3, so we won't worry for now about previous commits. Both programmers - User 1 and User 2 - clone the repository to begin working on their assignments. The following diagram shows a snapshot of the current situation:
 
-![Diagram 1 - Starting Position in Sample Repository](pictures/14.PNG)
+![Diagram 1 - Starting Position in Sample Repository](pictures/14.png)
 
 ### Users Create New Branch
 
